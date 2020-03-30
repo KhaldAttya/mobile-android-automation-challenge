@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.jaredsburrows.spoon'
 
 android {
     compileSdkVersion 29
@@ -38,8 +39,24 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.squareup.retrofit2:retrofit:2.7.1'
     implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'com.squareup.spoon:spoon-client:1.7.1'
+}
+spoon {
+    // Identifying title for this execution. ("Spoon Execution" by default)
+    title = "Espresso UI Test Results"
+
+    //Path to output directory. ("$buildDir/spoon-output" by default)
+    baseOutputDir = "automatedTests"
+
+    // Set ADB timeout. (minutes) (default is 10 mins)
+    adbTimeout = 5
+
+    // Clear app data before each test. (false by default)
+    //clearAppDataBeforeEachTest = true
 }

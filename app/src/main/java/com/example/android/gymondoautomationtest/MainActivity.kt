@@ -16,11 +16,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        button.setOnClickListener { proceedToList() }
+        loginButton.setOnClickListener { proceedToList() }
     }
 
     private fun proceedToList() {
-        if (editText.text.toString() == USERNAME && editText2.text.toString() == PASSWORD) {
+        if (emailTextField.text.toString() == USERNAME && passwordTextField.text.toString() == PASSWORD) {
             startActivity(Intent(this, ListActivity::class.java))
         } else {
             Toast.makeText(this, "Username and/or password incorrect", Toast.LENGTH_LONG).show()
