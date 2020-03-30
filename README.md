@@ -12,3 +12,13 @@
    
    **Password**: automation
 
+# Automated Tests Execution
+
+* Clone the repo
+* Start emulators or real devices under test
+* Run the command at the root of the project
+```
+gradlew spoon
+```
+* Get the report at /automatedTests
+
